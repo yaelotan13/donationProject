@@ -7,7 +7,7 @@ import BasicButton from '../Layout/BasicButton';
 
 const Welcome = ({ navigation }) => {
   const handlePress = () => {
-    navigation.navigate('Log In')
+    navigation.navigate('תחומי עניין')
   };
 
   return (

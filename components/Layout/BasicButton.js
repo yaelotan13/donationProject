@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 
+import { colors } from '../../utils/consts';
+
 const BasicButton = ({ text, onPress, largeBtn, containerStyle }) => {
   return (
     <View style={[styles.container, largeBtn && styles.largeBtn, containerStyle]}>
@@ -17,7 +19,7 @@ const BasicButton = ({ text, onPress, largeBtn, containerStyle }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: '5%',
-    backgroundColor: '#fb6b36',
+    backgroundColor: colors.primaryColor,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

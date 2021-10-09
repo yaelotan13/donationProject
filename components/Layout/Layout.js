@@ -1,10 +1,14 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-const Layout = ({ children }) => {
+import { colors } from '../../utils/consts';
+
+const Layout = ({ title, children }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.topContainer} />
+      <View style={styles.topContainer}>
+        { title && <Text style={styles.title}>{title}</Text>}
+      </View>
       <View style={styles.innerContainer}>
         {children}
       </View>
@@ -16,17 +20,23 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     flex: 1,
-    backgroundColor: '#693c3c',
+    backgroundColor: colors.darkColor,
     justifyContent: 'center',
     alignItems: 'center'
   },
   topContainer: {
     flex: 1,
+    justifyContent: 'center'
+  },
+  title: {
+    color: colors.secondaryColor,
+    fontWeight: 'bold',
+    fontSize: 20
   },
   innerContainer: {
     width: '100%',
     flex: 3,
-    backgroundColor: '#FFF3D9',
+    backgroundColor: colors.secondaryColor,
     alignItems: 'center',
     paddingTop: '10%'
   },

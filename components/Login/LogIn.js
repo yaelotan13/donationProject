@@ -7,7 +7,7 @@ import LogWith from './LogWith';
 
 const LogIn = ({ navigation }) => {
   const handlePress = () => {
-    navigation.navigate('Welcome')
+    navigation.navigate('ברוך הבא');
   }
 
   return (

@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+import { colors } from '../../utils/consts';
+
 const Logo = () => {
   return (
     <Text>
@@ -13,7 +15,7 @@ const Logo = () => {
 const styles = StyleSheet.create({
   logo: {
     fontSize: 32,
-    color: '#fb6b36'
+    color: colors.primaryColor
   },
   logoWidth: {
     fontWeight: 'bold'
