@@ -5,13 +5,17 @@ import Layout from '../Layout/Layout';
 import Logo from '../Layout/Logo';
 import LogWith from './LogWith';
 
-const LogIn = () => {
+const LogIn = ({ navigation }) => {
+  const handlePress = () => {
+    navigation.navigate('Welcome')
+  }
+
   return (
     <Layout>
       <Logo />
       <Text style={styles.registerTxt}>רישום קצר ואתם בפנים:</Text>
-      <LogWith name="גוגל"/>
-      <LogWith name="פייסבוק"/>
+      <LogWith name="גוגל" onPress={handlePress} />
+      <LogWith name="פייסבוק" onPress={handlePress} />
     </Layout>
   );
 }
