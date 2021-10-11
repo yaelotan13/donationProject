@@ -11,7 +11,7 @@ const Welcome = ({ navigation }) => {
   };
 
   return (
-    <Layout>
+    <Layout withLogo>
       <Text style={styles.helloTxt}>שלום ערן!</Text>
       <Text style={styles.welcomeTxtContainer}>
         <Text style={styles.welcomeTxt}>ברוך הבא ל- </Text>

@@ -1,8 +1,8 @@
 export const colors = {
-  primaryColor: '#fb6b36',
-  secondaryColor: '#FFF3D9',
-  darkColor: '#693c3c',
-  lightSecondary: '#fffdf7',
+  primaryColor: '#E87F52',
+  secondaryColor: '#F2F0D9',
+  darkColor: '#5B474C',
+  lightSecondary: '#FFFFFF',
 };
 
 export const intrests = [

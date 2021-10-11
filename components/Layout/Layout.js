@@ -1,17 +1,31 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 
 import { colors } from '../../utils/consts';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, children, withLogo }) => {
   return (
     <View style={styles.container}>
+      <View>
+        {withLogo && (
+          <Image
+            style={styles.logo}
+            source={require('../../assets/logo.png')}
+          />
+        )}
+      </View>
       <View style={styles.topContainer}>
-        { title && <Text style={styles.title}>{title}</Text>}
+        {title && <Text style={styles.title}>{title}</Text>}
       </View>
-      <View style={styles.innerContainer}>
+      <ImageBackground
+        source={require('../../assets/background.png')}
+        style={styles.innerContainer}
+      >
         {children}
-      </View>
+      </ImageBackground>
+      {/* <View style={styles.innerContainer}>
+        {children}
+      </View> */}
     </View>
   );
 };
@@ -22,7 +36,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.darkColor,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+  },
+  logo: {
+    resizeMode: 'contain',
+    height: 150,
+    width: 250,
+    marginTop: '8%',
+    zIndex: 0,
   },
   topContainer: {
     flex: 1,
@@ -35,10 +56,14 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     width: '100%',
-    flex: 3,
-    backgroundColor: colors.secondaryColor,
+    position: 'absolute',
+    height: '120%',
+    top: '28%',
+    zIndex: 1,
     alignItems: 'center',
-    paddingTop: '10%'
+    paddingTop: '10%',
+    flex: 1,
+    resizeMode: 'cover',
   },
 });
 
