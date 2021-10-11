@@ -11,11 +11,11 @@ const LogIn = ({ navigation }) => {
   }
 
   return (
-    <Layout>
+    <Layout withLogo>
       <Logo />
       <Text style={styles.registerTxt}>רישום קצר ואתם בפנים:</Text>
-      <LogWith name="גוגל" onPress={handlePress} />
-      <LogWith name="פייסבוק" onPress={handlePress} />
+      <LogWith name="גוגל" onPress={handlePress} icon={require('../../assets/google.png')} />
+      <LogWith name="פייסבוק" onPress={handlePress} icon={require('../../assets/facebook.png')} />
     </Layout>
   );
 }
