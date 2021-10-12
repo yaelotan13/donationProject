@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   selected: {
-    backgroundColor: colors.primaryColor
+    backgroundColor: colors.primary
   }
 });
 

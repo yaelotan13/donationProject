@@ -18,7 +18,7 @@ const Logo = () => {
 const styles = StyleSheet.create({
   logo: {
     fontSize: 32,
-    color: colors.primaryColor
+    color: colors.primary
   },
   pointContainer: {
     justifyContent: 'center',

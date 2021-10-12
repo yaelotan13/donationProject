@@ -3,25 +3,16 @@ import { StyleSheet, ScrollView, View } from 'react-native';
 
 import Layout from '../Layout/Layout';
 import Intrest from './Intrest';
-import BasicButton from '../Layout/BasicButton';
+import ContinueButton from '../Layout/ContinueButton';
+import Padding from '../Layout/Padding';
 import { intrests } from '../../utils/consts';
+import { toggle } from '../../utils/funcs';
 
 const Intrests = ({ navigation }) => {
   const [selectdIntrests, setSelectedIntrests] = useState([]);
 
   const handleIntrestPressed = (intrest) => {
-    const intrests = [ ...selectdIntrests ];
-    const curIntrestIndex = selectdIntrests.indexOf(intrest);
-
-    // add intrest to selected intrests
-    if (curIntrestIndex === -1) {
-      intrests.push(intrest);
-    } else {
-      // remove intrest from selected
-      intrests.splice(curIntrestIndex, 1);
-    }
-
-    setSelectedIntrests(intrests);
+    toggle(intrest, selectdIntrests, setSelectedIntrests);
   };
 
   const handleContinuePress = () => {
@@ -40,11 +31,9 @@ const Intrests = ({ navigation }) => {
               selected={selectdIntrests.indexOf(intrest) !== -1}
             />
           ))}
-          <View style={styles.buttonContainer}>
-            <BasicButton text="המשך" onPress={handleContinuePress} />
-          </View>
+          <ContinueButton handleContinuePress={handleContinuePress} />
         </ScrollView>
-        <View style={{height: '20%'}} />
+        <Padding />
       </View>
     </Layout>
   );

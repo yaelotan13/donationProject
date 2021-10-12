@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     flex: 1,
-    backgroundColor: colors.darkColor,
+    backgroundColor: colors.dark,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginTop: '10%'
   },
   title: {
-    color: colors.secondaryColor,
+    color: colors.secondary,
     fontWeight: 'bold',
     fontSize: 20
   },
