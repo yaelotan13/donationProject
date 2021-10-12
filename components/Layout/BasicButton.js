@@ -23,7 +23,7 @@ const BasicButton = ({ text, onPress, largeBtn, containerStyle, icon }) => {
 const styles = StyleSheet.create({
   btn: {
     marginTop: '5%',
-    backgroundColor: colors.primaryColor,
+    backgroundColor: colors.primary,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
