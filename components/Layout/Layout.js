@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 
 import { colors } from '../../utils/consts';
 
-const Layout = ({ title, children, withLogo }) => {
+const Layout = ({ title, children, withLogo, enableScroll }) => {
   return (
     <View style={styles.container}>
       <View>
@@ -14,18 +14,15 @@ const Layout = ({ title, children, withLogo }) => {
           />
         )}
       </View>
-      <View style={styles.topContainer}>
+      <View style={styles.titleContainer}>
         {title && <Text style={styles.title}>{title}</Text>}
       </View>
       <ImageBackground
         source={require('../../assets/background.png')}
-        style={styles.innerContainer}
+        style={[styles.innerContainer, !withLogo && styles.smallerInnerContainer, enableScroll && styles.enableScroll]}
       >
         {children}
       </ImageBackground>
-      {/* <View style={styles.innerContainer}>
-        {children}
-      </View> */}
     </View>
   );
 };
@@ -45,26 +42,32 @@ const styles = StyleSheet.create({
     marginTop: '8%',
     zIndex: 0,
   },
-  topContainer: {
+  titleContainer: {
     flex: 1,
-    justifyContent: 'center'
+    marginTop: '10%'
   },
   title: {
     color: colors.secondaryColor,
     fontWeight: 'bold',
     fontSize: 20
   },
+  smallerInnerContainer: {
+    top: '18%',
+    flex: 1,
+    height: '250%',
+  },
   innerContainer: {
     width: '100%',
     position: 'absolute',
-    height: '120%',
+    height: '160%',
     top: '28%',
-    zIndex: 1,
     alignItems: 'center',
     paddingTop: '10%',
-    flex: 1,
-    resizeMode: 'cover',
+    flex: 1
   },
+  enableScroll: {
+    height: 'auto'
+  }
 });
 
 export default Layout;
