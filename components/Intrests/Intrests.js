@@ -29,7 +29,7 @@ const Intrests = ({ navigation }) => {
   };
 
   return (
-    <Layout title="בחירת תחומי עניין">
+    <Layout title="בחירת תחומי עניין" enableScroll>
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.contentContainer}>
           {intrests.map((intrest) => (
@@ -44,6 +44,7 @@ const Intrests = ({ navigation }) => {
             <BasicButton text="המשך" onPress={handleContinuePress} />
           </View>
         </ScrollView>
+        <View style={{height: '20%'}} />
       </View>
     </Layout>
   );
@@ -57,13 +58,14 @@ const styles = StyleSheet.create({
   contentContainer: {
     flexDirection: 'row-reverse',
     flexWrap: 'wrap',
+    flex: 1,
   },
   buttonContainer: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    marginVertical: '10%'
+    marginVertical: '10%',
   }
 });
 

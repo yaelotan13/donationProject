@@ -35,8 +35,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   descTxt: {
-    marginTop: '1%',
-    fontSize: 20,
+    fontSize: 22,
   }
 });
 
