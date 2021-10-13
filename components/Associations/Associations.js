@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
 import Layout from '../Layout/Layout';
 import SearchBar from '../Layout/SearchBar';
@@ -9,7 +9,7 @@ import Padding from '../Layout/Padding';
 import { associations } from '../../utils/consts';
 import { toggle } from '../../utils/funcs';
 
-const Associations = () => {
+const Associations = ({ navigation }) => {
   const [search, setSearch] = useState('');
   const [selectedAssociations, setSelectedAssociations] = useState([]);
 
@@ -30,7 +30,7 @@ const Associations = () => {
             selected={selectedAssociations.indexOf(association.name) !== -1}
           />
         )))}
-        <ContinueButton handleContinuePress={() => {}} />
+        <ContinueButton handleContinuePress={() => {navigation.navigate('מידע נוסף')}} />
       </ScrollView>
       <Padding height="30%" />
     </Layout>
