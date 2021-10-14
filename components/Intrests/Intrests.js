@@ -16,7 +16,7 @@ const Intrests = ({ navigation }) => {
   };
 
   const handleContinuePress = () => {
-    navigation.navigate('בחירת עמותות')
+    navigation.navigate('בחירת עמותות');
   };
 
   return (

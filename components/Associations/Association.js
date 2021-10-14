@@ -22,10 +22,12 @@ const Association = ({ name, description, selected, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 52,
-    width: '90%',
-    marginTop: '6%',
+    height: 50,
+    width: '95%',
+    marginTop: '8%',
     borderBottomWidth: 2,
+    paddingBottom: '8%',
+    paddingHorizontal: '3%',
     borderBottomColor: colors.lightGrey,
     flexDirection: 'row-reverse',
     alignItems: 'center'
