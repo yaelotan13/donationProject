@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, View, ScrollView, Image, Text } from 'react-native';
 
 import { colors } from '../../utils/consts';
+import ContinueButton from '../Layout/ContinueButton';
 import Layout from '../Layout/Layout';
 
-const AssociationInfo = ({ name, description, selected, onPress }) => {
+const AssociationInfo = ({ name, description, selected, onPress, navigation }) => {
   const [activeSections, setActiveSections] = useState([]);
 
   return (
@@ -13,18 +14,43 @@ const AssociationInfo = ({ name, description, selected, onPress }) => {
         <View style={styles.headerContainer}>
           <View style={styles.contentContainer}>
             <Text style={styles.title}>עמדה</Text>
-            <Text style={styles.subTitle}>חולי דמנציה, אלצהיימר ומחלות דומות</Text>
-            <Image style={styles.activeDonationBtn} source={require('../../assets/green-rectangle.png')} />
+            <Text style={styles.subTitle}>
+              חולי דמנציה, אלצהיימר ומחלות דומות
+            </Text>
+            <Image
+              style={styles.activeDonationBtn}
+              source={require("../../assets/green-rectangle.png")}
+            />
           </View>
-          <Image style={styles.associationImage} source={require('../../assets/white-circle.png')} />
+          <Image
+            style={styles.associationImage}
+            source={require("../../assets/white-circle.png")}
+          />
         </View>
         <View style={styles.connectionsContainer}>
-          <Image style={styles.connectionIcon} source={require('../../assets/oragne-circle.png')} />
-          <Image style={styles.connectionIcon} source={require('../../assets/oragne-circle.png')} />
-          <Image style={styles.connectionIcon} source={require('../../assets/oragne-circle.png')} />
+          <Image
+            style={styles.connectionIcon}
+            source={require("../../assets/oragne-circle.png")}
+          />
+          <Image
+            style={styles.connectionIcon}
+            source={require("../../assets/oragne-circle.png")}
+          />
+          <Image
+            style={styles.connectionIcon}
+            source={require("../../assets/oragne-circle.png")}
+          />
         </View>
         <Text style={styles.efficiencyTxt}>מדד היעילות של משרד המשפטים</Text>
-        <Image style={styles.efficiencyBarIcon} source={require('../../assets/efficiency-bar.png')} />
+        <Image
+          style={styles.efficiencyBarIcon}
+          source={require("../../assets/efficiency-bar.png")}
+        />
+        <ContinueButton
+          handleContinuePress={() => {
+            navigation.navigate("חלוקת התרומות");
+          }}
+        />
       </ScrollView>
     </Layout>
   );
@@ -78,8 +104,8 @@ const styles = StyleSheet.create({
   efficiencyBarIcon: {
     marginTop: 8,
     alignSelf: 'center',
-    height: 26,
-    width: 260
+    height: 20,
+    width: 300
   },
 });
 
