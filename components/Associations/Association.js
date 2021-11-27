@@ -3,8 +3,8 @@ import { StyleSheet, View, Image, Text, Pressable } from 'react-native';
 
 import { colors } from '../../utils/consts';
 
-const circle = require('../../assets/circle.png');
-const selectedCircle = require('../../assets/selected-circle.png');
+const circle = require('../../assets/circle-with-shekel.png');
+const selectedCircle = require("../../assets/circle-with-shekel-green.png");
 
 const Association = ({ name, description, selected, onPress }) => {
   return (
